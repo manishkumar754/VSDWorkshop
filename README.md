@@ -9,3 +9,8 @@ Desktop/work/tools/openlane_working_dir/openlane$ docker
 
 ![VirtualBox_vsdworkshop_19_03_2024_16_09_12](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/8cd9565e-9de1-43ac-a2b2-66339ed0b63b)
 
+
+OUTPUT-->
+Total numbers of cells = 14876
+numbers of D flip flop = 1613
+so, flip flop ratio = no. of D ff / total no. cells = 1613 / 14876 = 0.108429
