@@ -8,7 +8,7 @@ Tracks These are using in the routing stage. These are nothing but metal layers.
    ![track_info](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/6644be86-0f48-486e-83e7-9ace9b46d8e5)
  ![VirtualBox_vsdworkshop_26_03_2024_15_55_53](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/be1053b2-7829-42e2-a338-aa7ab7fdf8c9)
     
-    help grid:-
+  help grid:-
  ![grid_dim](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/d44cd59b-504f-4300-a424-bb27d641bcf2)
  Now layout is done as per the pnr tool.
  Whenever we make the layout we just define the layers and contacts. we don't define the ports. Ports doesn't mean anything to the magic. 
@@ -35,12 +35,56 @@ Before going to run synthesis, we have modify config file.
  Design Prepration:- 
  ![VirtualBox_vsdworkshop_26_03_2024_16_25_01](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/0cbf8c32-52e9-4d0b-b68b-dcdebdfee9ce)
 
- RUN SYNTHESIS:-
-   run_synthesis
+ RUN SYNTHESIS:- 
+     
+       run_synthesis :-
    ![VirtualBox_vsdworkshop_26_03_2024_16_31_28](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/c0cd5177-60bb-4734-817e-18620c770c50)
    ![Screenshot 2024-03-19 110615](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/fe652a08-18c4-43b3-a51e-44def563a6aa)
+  
    The synthesis is Successful.
 
-   
+
+  ## Lab steps to configure synthesis settings to fix slack and include vsdinv
+  1. Go to README.md. to see any stratergies to overcome timing violations.
+     -->wns Worst neagative slack -->tns total negative slack.
+     <img width="737" alt="image" src="https://github.com/manishkumar754/VSDWorkshop/assets/132566236/61653191-5b33-42d9-acd2-4ac7d952dd3e">
+     <img width="684" alt="image" src="https://github.com/manishkumar754/VSDWorkshop/assets/132566236/c14c1c5b-b325-4a92-bd58-f3fb1ea1bea5">
+
+ After set the SYNTH_STRATEGY & SYNTH_SIZING As we expected the area increased.
+The steps I followed is
+
+  1.Go to openlane directory type docker.
+  2. pwd
+  3. ls-ltr
+  4. ./flow.tcl -interactive
+  5. package require openlane 0.9
+  6. prep -design picorv32a -tag 22-03_17-07 -overwrite
+  7. set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  8. add_lefs -src $lefs
+  9. run_synthesis ---> Here I got some tns & wns values and some area. By using area and sizing strategy i increased area and decreased the dealy (tns &wns values)
+  10. prep -design picorv32a -tag 22-03_17-07 -overwrite
+  11. set lefs [glob $::env(DESIGN_DRV)/src/*.lef]
+  12. add_lefs -src $lefs
+  13. set ::env(SYNTH_STRATEGY) "DELAY 1"
+  14. set ::env(SYNTH_SIZING)
+  15. run_synthesis
+
+  Area increased to --> Chip area for module '\picorv32a': 196832.528000
+    tns &wns became 0
+    ![Screenshot 2024-03-22 133842](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/fe12b286-3936-4e03-83ff-e6cc68fc718b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
