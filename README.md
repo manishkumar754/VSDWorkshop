@@ -15,3 +15,6 @@ OUTPUT-->
 Total numbers of cells = 14876
 numbers of D flip flop = 1613
 so, flip flop ratio = no. of D ff / total no. cells = 1613 / 14876 = 0.108429
+
+
+
