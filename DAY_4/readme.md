@@ -53,23 +53,25 @@ Before going to run synthesis, we have modify config file.
  After set the SYNTH_STRATEGY & SYNTH_SIZING As we expected the area increased.
 The steps I followed is
 
-  1.Go to openlane directory type docker.
-  2. pwd
-  3. ls-ltr
-  4. ./flow.tcl -interactive
-  5. package require openlane 0.9
-  6. prep -design picorv32a -tag 22-03_17-07 -overwrite
-  7. set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
-  8. add_lefs -src $lefs
-  9. run_synthesis ---> Here I got some tns & wns values and some area. By using area and sizing strategy i increased area and decreased the dealy (tns &wns values)
-  10. prep -design picorv32a -tag 22-03_17-07 -overwrite
-  11. set lefs [glob $::env(DESIGN_DRV)/src/*.lef]
-  12. add_lefs -src $lefs
-  13. set ::env(SYNTH_STRATEGY) "DELAY 1"
-  14. set ::env(SYNTH_SIZING)
-  15. run_synthesis
+  1. Go to openlane directory type docker.
+  2.  pwd
+  3.  ls-ltr
+  4.  ./flow.tcl -interactive
+  5.  package require openlane 0.9
+  6.  prep -design picorv32a -tag run1 -overwrite
+  7.  set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  8.  add_lefs -src $lefs
+  9.  run_synthesis ---> Here I got some tns & wns values and some area. By using area and sizing strategy i increased area and decreased the dealy (tns &wns values)
+  10.  prep -design picorv32a -tag 22-03_17-07 -overwrite
+  11.  set lefs [glob $::env(DESIGN_DRV)/src/*.lef]
+  12.  add_lefs -src $lefs
+  13.  set ::env(SYNTH_STRATEGY) "DELAY 1"
+  14.  set ::env(SYNTH_SIZING)
+  15.  run_synthesis
+ 
 
   Area increased to --> Chip area for module '\picorv32a': 196832.528000
+   
     tns &wns became 0
     ![Screenshot 2024-03-22 133842](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/fe12b286-3936-4e03-83ff-e6cc68fc718b)
 
