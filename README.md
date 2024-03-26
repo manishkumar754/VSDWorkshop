@@ -59,6 +59,8 @@ magic -T sky130A.tech sky130_inv.mag &
 ![inverter_1](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/259fd174-687f-43c9-86a5-12ab2d43b594)
 
 ![inverter_2](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/e3e0af70-7bb6-4150-b106-dc91f5b1a166)
+![INverter_box](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/f16d7891-8e19-455e-9f05-0e78b324b0b6)
+
 
 Spice extraction of CMOS inverter in magic tool.
 ![inverter_spice_1](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/9255e2a4-e46a-4164-9809-91a4fbe4dc4a)
