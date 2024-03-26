@@ -2,3 +2,11 @@ DAY_2  CHIP FLOOR PLANNING Using openlane
 
 
 steps to run floorplan
+![floorplan](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/47208a3b-2a43-45a8-b2a1-fed766866c48)
+
+picorv32a file
+![picorv32a floorplan](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/408bab35-a234-46e8-9fac-40780ba93f92)
+
+ioPlacer file
+![VirtualBox_vsdworkshop_18_03_2024_23_28_52](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/5bdf54c3-adf0-4605-a7d9-0127d66f5fc6)
+
