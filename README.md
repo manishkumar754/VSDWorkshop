@@ -41,3 +41,6 @@ If we want change anything in floorplan, we need to make changes in design relat
 ![magic](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/03d54a77-c654-419e-abf1-ec74f70e9e8c)
 
 
+Library Binding and placement
+![placement_amgic](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/73f4f89d-cf84-4db4-b332-ff3541b70355)
+![placemt_magic1](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/bcaac299-54cc-4790-905c-abb594b1f725)
