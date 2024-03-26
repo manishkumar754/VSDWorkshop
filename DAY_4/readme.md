@@ -89,13 +89,45 @@ The steps I followed is
   ![Screenshot 2024-03-22 135109](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/84db23ee-3eab-439a-b217-4cdf7b51d6ff)
 
  
+ ## Clock-tree Synthesis
+
+  ![Screenshot 2024-03-23 211238](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/756ec7ab-a3ec-4302-b78c-8c0af2771c58)
+  
+  ![Screenshot 2024-03-23 211459](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/0ed0e4af-34cd-4473-a970-ba47a6fea0e6)
+
+  Post Clock tree synthesis
+  We invoke openroad in the openlane flow
+ 
+    %openroad
+ Run the following commands to create a .db file which the openroad software can read
 
 
+     read_lef /openLANE_flow/designs/picorv32a/runs/run1/tmp/merged.lef
+     read_def /openLANE_flow/designs/picorv32a/runs/run1/results/cts/picorv32a.cts.def
+     write_db pico_cts.db
+     read_db pico_cts.db
+     read_verilog /openLANE_flow/designs/picorv32a/runs/21-03_02-34/results/synthesis/picorv32a.synthesis_cts.v
+     read_liberty $::env(LIB_TYPICAL)
+     link_design picorv32a
+     read_sdc /openLANE_flow/designs/picorv32a/src/picorv32a.sdc
+     set_propagated_clock [all_clocks]
+     report_checks -path_delay min_max -fields {slew trans net cap input_pin} -format full_clock_expanded -digits 4
 
 
+   Replace the clock buffer by giving the following command
+   
+      set ::env(CTS_CLK_BUFFER_LIST) [lreplace $::env(CTS_CLK_BUFFER_LIST) 0 0]
 
+   We observe the output as
+    
+       sky130_fd_sc_hd__clkbuf_2 sky130_fd_sc_hd__clkbuf_4 sky130_fd_sc_hd__clkbuf_8
 
+  ![Screenshot 2024-03-24 120232](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/4daaffc4-e39b-492b-b430-353ef43d0d6d)
+ 
+   ![Screenshot 2024-03-24 120653](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/c147d16f-b652-42c7-a7b9-857b55fae087)
 
+   //Layout after CTS
+    ![Screenshot 2024-03-24 122603](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/1f4d3d2f-bd0a-4081-aa10-2f9ec4c8fd9c)
 
 
 
