@@ -75,8 +75,8 @@ The steps I followed is
     tns &wns became 0
   ![Screenshot 2024-03-22 133842](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/fe12b286-3936-4e03-83ff-e6cc68fc718b)
 
-
-
+  
+ 
 
 
 
