@@ -75,7 +75,16 @@ The steps I followed is
     tns &wns became 0
   ![Screenshot 2024-03-22 133842](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/fe12b286-3936-4e03-83ff-e6cc68fc718b)
 
-  
+  Locating the Custom Inverter Cell in Layout
+
+  After Placement stage we can see new inverter cell Which is invoked intentionally is placed in the design.
+
+  steps
+   Search for instance of cell sky130_myinverter inside the DEF file after placement stage:
+   cat picorv32.def | grep sky130_vsdinv: Open the def file via magic:
+   magic -T /home/vsduser/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
+
+
  
 
 
