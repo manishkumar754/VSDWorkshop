@@ -84,6 +84,9 @@ The steps I followed is
    cat picorv32.def | grep sky130_vsdinv: Open the def file via magic:
    magic -T /home/vsduser/Desktop/OpenLane/pdks/sky130A/libs.tech/magic/sky130A.tech lef read ../../tmp/merged.nom.lef def read picorv32.def &
 
+  ![Screenshot 2024-03-23 153423](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/a40d3ccd-05ae-4fc4-adbd-cb30ba257480)
+  ![VirtualBox_vsdworkshop_26_03_2024_09_50_09](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/7c026bb1-3eeb-4ad2-8598-79ef092d53f1)
+  ![Screenshot 2024-03-22 135109](https://github.com/manishkumar754/VSDWorkshop/assets/132566236/84db23ee-3eab-439a-b217-4cdf7b51d6ff)
 
  
 
